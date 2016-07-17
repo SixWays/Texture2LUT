@@ -26,6 +26,22 @@ namespace Sigtrap.T2LUT {
 			EditorWindow.GetWindow<Texture2LUT>();
 		}
 
+		double _lastUpdateTime = 0;
+		void Update(){
+			// Check (once per second) if palette can be read... using stupid try/catch as there's no exposed property.
+			if (EditorApplication.timeSinceStartup - _lastUpdateTime > 1f){
+				_lastUpdateTime = EditorApplication.timeSinceStartup;
+				if (_palette != null){
+					_pValid = true;
+					try {
+						_palette.GetPixel(0,0);
+					} catch {
+						_pValid = false;
+					}
+				}
+				Repaint();
+			}
+		}
 		void OnEnable(){
 			titleContent = new GUIContent("Texture To LUT");
 			_resNames = new string[_ress.Length];
@@ -48,17 +64,7 @@ namespace Sigtrap.T2LUT {
 			}
 			EditorGUILayout.Space();
 
-			// If texture changes, check it can be read/written (using stupid try/catch because no exposed property...)
-			Texture2D lastP = _palette;
 			_palette = EditorGUILayout.ObjectField("Palette", _palette, typeof(Texture2D), false) as Texture2D;
-			if (_palette != null && _palette != lastP){
-				_pValid = true;
-				try {
-					_palette.GetPixel(0,0);
-				} catch {
-					_pValid = false;
-				}
-			}
 			if (!_pValid){
 				++EditorGUI.indentLevel;
 				EditorGUILayout.HelpBox("Texture read/write must be enabled in import settings!", MessageType.Error);
