@@ -13,7 +13,9 @@ Generated textures can be used as a standard 3D LUT.
 
 ##Examples
 The [Quake palette](https://quakewiki.org/wiki/Quake_palette) converted to a LUT:
-![Quake Palette](http://www.sigtrapgames.com/wp-content/uploads/2016/07/Qpalette.png)  ![Quake LUT](http://www.sigtrapgames.com/wp-content/uploads/2016/07/QLUT.png)
+
+![Quake Palette](http://www.sigtrapgames.com/wp-content/uploads/2016/07/Qpalette.png)   ![Quake LUT](http://www.sigtrapgames.com/wp-content/uploads/2016/07/QLUT.png)
 
 A screen of our game [Sublevel Zero](http://store.steampowered.com/app/327880/) converted to a LUT:
-![SL0 Screenshot](http://www.sigtrapgames.com/wp-content/uploads/2016/07/SL0_PaletteTest.png)  ![SL0 LUT](http://www.sigtrapgames.com/wp-content/uploads/2016/07/SL0_LUT.png)
+
+![SL0 Screenshot](http://www.sigtrapgames.com/wp-content/uploads/2016/07/SL0_PaletteTest.png)   ![SL0 LUT](http://www.sigtrapgames.com/wp-content/uploads/2016/07/SL0_LUT.png)
